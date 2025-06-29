@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save and Retrieve Image from LocalStorage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        img {
+            max-width: 300px;
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Save & Retrieve from LocalStorage</h1>
+    
+    <!-- Image Upload -->
+    <input type="file" id="imageInput" accept="image/*">
+    <button id="saveBtn">Save Image</button>
+
+    <!-- Display Image -->
+    <h2>Saved Image:</h2>
+    <img id="displayImage" src="" alt="No Image Found">
+
+    <script>
+        // Elements
+        const imageInput = document.getElementById('imageInput');
+        const saveBtn = document.getElementById('saveBtn');
+        const displayImage = document.getElementById('displayImage');
+
+        // Load Image if Already Saved
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedImage = localStorage.getItem('savedImage');
+            if (savedImage) {
+                displayImage.src = savedImage;
+            }
+        });
+
+        // Save Image to LocalStorage
+        saveBtn.addEventListener('click', () => {
+            const file = imageInput.files[0];
+            if (!file) {
+                alert('Please select an image to save.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = () => {
+                const imageDataUrl = reader.result;
+                localStorage.setItem('savedImage', imageDataUrl);
+                displayImage.src = imageDataUrl;
+                alert('Image saved successfully!');
+            };
+            reader.readAsDataURL(file);
+        });
+    </script>
+
+</body>
+</html>

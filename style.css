@@ -1,0 +1,118 @@
+/* Import clean font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.inputField {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.inputField h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.inputField input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.inputField button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.inputField button:hover {
+    background-color: #45a049;
+}
+
+.qrContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.qrCard {
+    background-color: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+.qrCard:hover {
+    transform: translateY(-5px);
+}
+
+.qrCard img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.qrCard p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+#sFlec {
+    display: flex;
+    justify-content: space-around;
+}
+
+#sFlec button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+#sFlec button:first-child {
+    background-color: #f44336;
+    color: white;
+}
+
+#sFlec button:first-child:hover {
+    background-color: #d32f2f;
+}
+
+#sFlec button:last-child {
+    background-color: #2196f3;
+    color: white;
+}
+
+#sFlec button:last-child:hover {
+    background-color: #1976d2;
+}
